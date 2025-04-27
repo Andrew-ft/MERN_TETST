@@ -1,0 +1,16 @@
+<h1>This is Product Page</h1>
+<br>
+
+<div class="product-container">
+    <% if(products.length) {  %>
+        <% products.forEach(product => { %>
+            <div>
+                <a href="/products/<%= product._id %>"><%= product.title %></a>
+                <form action="/products/<%= product._id %>/delete" method="POST">
+                    <button type="submit" style="color: crimson; cursor: pointer;">Delete</button>
+                </form>
+                <br>
+            </div>
+        <% }) %>
+    <% } %>
+</div>
