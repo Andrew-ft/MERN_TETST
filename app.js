@@ -9,8 +9,10 @@ var expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 
 const Product =  require('./models/Product');
+const path = require('path');
 
-app.set('views', './views');
+// app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.set('layout', 'layouts/default');
@@ -23,6 +25,10 @@ const productRoutes = require('./routes/productRoutes');
 let mongoUrl = "mongodb+srv://thantpyaes01:Password01@cluster0.b1of48s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 mongoose.connect(mongoUrl).then(() => {
     console.log("DB connected successfully");
+    app.listen(3000, () => {
+        console.log('listening on port 3000...');
+        
+    })
 }) .catch(e => {
     console.log(e);
     
