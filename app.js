@@ -23,10 +23,6 @@ const productRoutes = require('./routes/productRoutes');
 let mongoUrl = "mongodb+srv://thantpyaes01:Password01@cluster0.b1of48s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 mongoose.connect(mongoUrl).then(() => {
     console.log("DB connected successfully");
-    app.listen(3000, () => {
-        console.log('listening on port 3000...');
-        
-    })
 }) .catch(e => {
     console.log(e);
     
